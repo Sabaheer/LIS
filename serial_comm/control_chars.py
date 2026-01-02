@@ -1,0 +1,6 @@
+STX = b'\x02'
+ETX = b'\x03'
+ACK = b'\x06'
+NAK = b'\x15'
+EOT = b'\x04'
+ENQ = b'\x05'

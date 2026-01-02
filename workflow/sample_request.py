@@ -6,3 +6,8 @@ def handle_sample_request(ser, msg):
     response = build_S_delta(sample_type, sample_id)
     ser.write(response)
 
+    ack = ser.read(1)
+    if ack != b'\x06':
+        print("Analyzer did not ACK SΔ")
+
+

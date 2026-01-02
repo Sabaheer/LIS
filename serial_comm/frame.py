@@ -13,9 +13,11 @@ def receive_message(ser):
 
     # Read until ETX
     while True:
+
         b = ser.read(1)
         if not b:
-            continue
+            raise TimeoutError("Receive timeout")
+
         buffer.append(b[0])
         if b[0] == ETX:
             break
