@@ -1,12 +1,20 @@
 import serial
-from config.settings import PORT, BAUDRATE, TIMEOUT
+from config.settings import (
+    PORT,
+    BAUDRATE,
+    BYTESIZE,
+    PARITY,
+    STOPBITS,
+    SERIAL_READ_TIMEOUT
+)
 
 def open_serial():
-    return serial.Serial(
+    ser = serial.Serial(
         port=PORT,
         baudrate=BAUDRATE,
-        bytesize=serial.EIGHTBITS,
-        parity=serial.PARITY_NONE,
-        stopbits=serial.STOPBITS_ONE,
-        timeout=TIMEOUT
+        bytesize=BYTESIZE,
+        parity=PARITY,
+        stopbits=STOPBITS,
+        timeout=SERIAL_READ_TIMEOUT  
     )
+    return ser

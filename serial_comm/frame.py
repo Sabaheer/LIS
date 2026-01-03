@@ -1,3 +1,5 @@
+
+
 STX = 0x02
 ETX = 0x03
 
@@ -27,3 +29,7 @@ def receive_message(ser):
     buffer.append(bcc[0])
 
     return bytes(buffer)
+
+
+
+
